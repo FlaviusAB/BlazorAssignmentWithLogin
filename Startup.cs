@@ -3,6 +3,7 @@ using System.Security.Claims;
 using LoginExample.Authentication;
 using LoginExample.Data;
 using LoginExample.Data.Impl;
+using LoginExample.Data.Persistence;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Hosting;
@@ -23,27 +24,25 @@ public class Startup {
     public void ConfigureServices(IServiceCollection services) {
         services.AddRazorPages();
         services.AddServerSideBlazor();
-        services.AddSingleton<WeatherForecastService>();
+        services.AddSingleton<IFileContext, FileContext>();
         services.AddScoped<IUserService, InMemoryUserService>();
         
         services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
         services.AddAuthorization(options => {
-            options.AddPolicy("MustBeVIA",  a => 
-                a.RequireAuthenticatedUser().RequireClaim("Domain", "via.dk"));
             
-            options.AddPolicy("SecurityLevel4",  a => 
-                a.RequireAuthenticatedUser().RequireClaim("Level", "4","5"));
+            options.AddPolicy("MustBeTeacherHigher4", policy =>
+                policy.RequireAuthenticatedUser()
+                    .RequireClaim("Role", "Teacher")
+                    .RequireClaim("Level", "4","5"));
+            options.AddPolicy("MustBeTeacher", policy =>
+                policy.RequireAuthenticatedUser()
+                    .RequireClaim("Role", "Teacher"));
+
+            options.AddPolicy("Student", policy =>
+                policy.RequireAuthenticatedUser()
+                    .RequireClaim("Role", "Student"));
             
-            options.AddPolicy("MustBeTeacher",  a => 
-                a.RequireAuthenticatedUser().RequireClaim("Role", "Teacher"));
-            
-            options.AddPolicy("SecurityLevel2", policy =>
-                policy.RequireAuthenticatedUser().RequireAssertion(context => {
-                    Claim levelClaim = context.User.FindFirst(claim => claim.Type.Equals("Level"));
-                    if (levelClaim == null) return false;
-                    return int.Parse(levelClaim.Value) >= 2;
-                }));
         });
     }
 

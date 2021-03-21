@@ -1,4 +1,5 @@
-using LoginExample.Models;
+using LoginExample.Data.Model;
+
 
 namespace LoginExample.Data {
 public interface IUserService {

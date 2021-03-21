@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using LoginExample.Models;
+using LoginExample.Data.Model;
+
 
 namespace LoginExample.Data.Impl {
 public class InMemoryUserService : IUserService {
@@ -22,19 +23,19 @@ public class InMemoryUserService : IUserService {
                 City = "Aarhus",
                 Domain = "hotmail.com",
                 Password = "123456",
-                Role = "Student",
+                Role = "Teacher",
                 BirthYear = 1998,
                 SecurityLevel = 3,
                 UserName = "Jakob"
             },
             new User {
-                City = "Vejle",
+                City = "Horsens",
                 Domain = "via.com",
                 Password = "123456",
-                Role = "Guest",
+                Role = "Student",
                 BirthYear = 1973,
                 SecurityLevel = 1,
-                UserName = "Kasper"
+                UserName = "Alin"
             }
         }.ToList();
     }
