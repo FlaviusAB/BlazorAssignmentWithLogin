@@ -32,8 +32,8 @@
                     @adult.FirstName @adult.LastName
                     <AuthorizeView Policy="MustBeTeacher">
                     <div class="d-flex" style="flex-direction: row">
-                        <button class="btn btn-outline-info btn-sm" @onclick="() => Edit(adult.Id)">Edit</button>
-                        <button class="btn btn-outline-info btn-sm" @onclick="() => View(adult.Id)">View</button>
+                        <button class="btn btn-outline-info btn-sm mr-3" @onclick="() => Edit(adult.Id)">Edit</button>
+                        <button class="btn btn-outline-info btn-sm mr-3" @onclick="() => View(adult.Id)">View</button>
                         <button class="btn btn-outline-info btn-sm mr-3" @onclick="() => Delete(adult.Id)">Delete</button>
 
                     </div>

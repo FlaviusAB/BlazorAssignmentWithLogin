@@ -26,16 +26,16 @@ public class InMemoryUserService : IUserService {
                 Role = "Teacher",
                 BirthYear = 1998,
                 SecurityLevel = 3,
-                UserName = "Jakob"
+                UserName = "Kasper"
             },
             new User {
                 City = "Horsens",
                 Domain = "via.com",
                 Password = "123456",
                 Role = "Student",
-                BirthYear = 1973,
+                BirthYear = 1989,
                 SecurityLevel = 1,
-                UserName = "Alin"
+                UserName = "Flavius"
             }
         }.ToList();
     }
