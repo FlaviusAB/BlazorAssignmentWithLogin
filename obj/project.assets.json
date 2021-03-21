@@ -54,11 +54,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alin\\Desktop\\Dnp\\LoginExample\\LoginExample.csproj",
-      "projectName": "LoginExample",
-      "projectPath": "C:\\Users\\alin\\Desktop\\Dnp\\LoginExample\\LoginExample.csproj",
+      "projectUniqueName": "C:\\Users\\alin\\Desktop\\Dnp\\BlazorAssignmentWithLogin\\BlazorAssignmentWithLogin.csproj",
+      "projectName": "BlazorAssignmentWithLogin",
+      "projectPath": "C:\\Users\\alin\\Desktop\\Dnp\\BlazorAssignmentWithLogin\\BlazorAssignmentWithLogin.csproj",
       "packagesPath": "C:\\Users\\alin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alin\\Desktop\\Dnp\\LoginExample\\obj\\",
+      "outputPath": "C:\\Users\\alin\\Desktop\\Dnp\\BlazorAssignmentWithLogin\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
